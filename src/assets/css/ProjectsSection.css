@@ -1,0 +1,153 @@
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+
+.project-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.project-item:nth-child(even) {
+  direction: rtl;
+}
+
+.project-item:nth-child(even) .project-info {
+  direction: ltr;
+}
+
+.project-visual {
+  position: relative;
+  overflow: hidden;
+  /* aspect-ratio: 16/10; */
+  background: var(--card-bg);
+  width: 100%;
+}
+
+.project-visual img {
+  width: 100%;
+  height: auto;
+  /* object-fit: cover; */
+  display: block;
+  filter: grayscale(100%);
+  transition: var(--transition);
+}
+
+.project-item:hover .project-visual img {
+  filter: grayscale(0%);
+  transform: scale(1.01);
+}
+
+.project-links {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  gap: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition);
+}
+
+.project-item:hover .project-links {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-links a {
+  background: var(--color-text);
+  color: var(--color-bg);
+  padding: 0.6rem 1.2rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.project-info {
+  padding: 2rem 0;
+}
+
+.project-subtitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.project-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-family: var(--font-serif);
+  margin-bottom: 2rem;
+  line-height: 1.1;
+}
+
+.project-description {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.project-tags span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-text);
+  border: 1px solid var(--glass-border);
+  padding: 0.4rem 1rem;
+}
+
+@media (max-width: 992px) {
+  .project-item, .project-item:nth-child(even) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    direction: ltr;
+  }
+  
+  .project-info {
+    padding: 0;
+  }
+  
+  .project-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .projects-list {
+    gap: 5rem;
+  }
+
+  .project-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .project-tags {
+    gap: 0.5rem;
+  }
+
+  .project-tags span {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.8rem;
+  }
+}
