@@ -90,7 +90,7 @@ onMounted(() => {
           <div class="visual-container">
             <div class="decorative-letter">F</div>
             <div class="image-reveal">
-              <img src="../assets/profile.jpg" alt="Fahri Setia Darma" />
+              <img src="../assets/profile.JPG" alt="Fahri Setia Darma" />
               <div class="image-overlay-texture"></div>
             </div>
             <div class="floating-circle"></div>

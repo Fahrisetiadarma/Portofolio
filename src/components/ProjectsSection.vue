@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import projectImg1 from '../assets/project1.png'
 import projectImg2 from '../assets/project2.png'
-import preview from '../assets/preview.png'
+import preview from '../assets/Preview.png'
 
 const projects = ref([
   {
